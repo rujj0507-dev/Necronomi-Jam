@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://yy0mrbgpo3i"]
 
 [ext_resource type="Script" uid="uid://cttd51p60e3ws" path="res://script/character.gd" id="1_snucy"]
+[ext_resource type="Texture2D" uid="uid://d0aa716fhg8v" path="res://icon.svg" id="2_qug0s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qug0s")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2093416601]
 script = ExtResource("1_snucy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1518290473]
+sprite_frames = SubResource("SpriteFrames_s7wsd")
