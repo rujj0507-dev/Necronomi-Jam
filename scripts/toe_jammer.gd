@@ -4,7 +4,7 @@ var hp = 40
 var balls_path = preload("res://scene/toe_jammer_bullet.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("Monster")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

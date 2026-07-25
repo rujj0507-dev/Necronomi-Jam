@@ -13,7 +13,7 @@ var speed = 50.0
 var hp = 25
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
-	
+	add_to_group("Monster")
 	#fire_timer = Timer.new()
 	#fire_timer.one_shot = true  # important: one_shot for now, we restart it manually
 	#add_child(fire_timer)

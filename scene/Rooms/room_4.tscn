@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dxmty70pw2p8g" path="res://tileset/wall_1.png" id="2_8bavf"]
 [ext_resource type="Texture2D" uid="uid://didrpa823s2o5" path="res://sprite/floor_pit_9.png" id="3_4htfm"]
 [ext_resource type="Script" uid="uid://di1sjlclu26c6" path="res://scripts/tile_map_layer.gd" id="3_ehnvf"]
+[ext_resource type="PackedScene" uid="uid://dbonbosagalbi" path="res://scene/door.tscn" id="5_8bavf"]
 [ext_resource type="PackedScene" uid="uid://yvi1e6bd3ych" path="res://scene/Enemy.tscn" id="6_rg2lk"]
 [ext_resource type="PackedScene" uid="uid://yy0mrbgpo3i" path="res://scene/Player.tscn" id="6_wajga"]
+[ext_resource type="PackedScene" uid="uid://bedvv4bhvaapi" path="res://scene/UI.tscn" id="8_ehnvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr22o"]
 texture = ExtResource("1_wajga")
@@ -56,6 +58,9 @@ tile_map_data = PackedByteArray("AAD1/wUAAQABAAAAAAD2/wUAAQABAAAAAAD3/wUAAQABAAA
 tile_set = SubResource("TileSet_snudi")
 script = ExtResource("3_ehnvf")
 
+[node name="Door" parent="." unique_id=1504637846 instance=ExtResource("5_8bavf")]
+position = Vector2(152, 8)
+
 [node name="Player" parent="." unique_id=2093416601 instance=ExtResource("6_wajga")]
 position = Vector2(-152, 4)
 
@@ -70,3 +75,21 @@ position = Vector2(88, 50)
 
 [node name="Nihceat4" parent="." unique_id=27923689 instance=ExtResource("6_rg2lk")]
 position = Vector2(-104, 50)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1405096372]
+z_index = -100
+offset_left = -390.0
+offset_top = -254.0
+offset_right = 387.0
+offset_bottom = 346.0
+color = Color(0.180135, 0.0695655, 0.198345, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1610734843]
+position = Vector2(-390, -254)
+color = Color(0.956721, 0.798827, 0.800145, 1)
+blend_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=561463468]
+zoom = Vector2(4, 4)
+
+[node name="Control" parent="." unique_id=608296916 instance=ExtResource("8_ehnvf")]

@@ -1,18 +1,18 @@
 extends Control
 
-
+var rng = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	GameManager.card_turn = 3
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if GameManager.cardpick:
 		GameManager.cardpick = false
-		get_tree().change_scene_to_file("res://scene/game.tscn")
-
-func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("NextScene"):
-		get_tree().change_scene_to_file("res://scene/game.tscn")
-		
+		if GameManager.boss_room == 0:
+			get_tree().change_scene_to_file("res://scene/Rooms/room_boss.tscn")
+		else:
+			rng = randi_range(1,8)
+			get_tree().change_scene_to_file("res://scene/Rooms/room_"+str(rng)+".tscn") 

@@ -1,22 +1,29 @@
 [gd_scene format=3 uid="uid://dbonbosagalbi"]
 
+[ext_resource type="Script" uid="uid://66mbfqp6ev5f" path="res://scripts/door.gd" id="1_y5pye"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
-size = Vector2(16, 32)
+size = Vector2(8, 32)
 
 [sub_resource type="Gradient" id="Gradient_5623o"]
+offsets = PackedFloat32Array(0.23841059, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_s7rlf"]
 gradient = SubResource("Gradient_5623o")
-fill_from = Vector2(0, 0.5)
-fill_to = Vector2(0.5, 0.5)
+fill = 2
+fill_from = Vector2(1, 0.4744186)
+fill_to = Vector2(0.3116279, 0.47906977)
 
 [node name="Door" type="Area2D" unique_id=1504637846]
+script = ExtResource("1_y5pye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073213095]
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_s7wsd")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=306003619]
-position = Vector2(-24, 0)
-scale = Vector2(1, 0.5)
-color = Color(1, 1, 0, 1)
+scale = Vector2(0.25, 0.5)
 texture = SubResource("GradientTexture2D_s7rlf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

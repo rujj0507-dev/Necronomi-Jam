@@ -14,6 +14,7 @@ enum state {bullet,spawn }
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	add_to_group("Monster")
 	
 
 		

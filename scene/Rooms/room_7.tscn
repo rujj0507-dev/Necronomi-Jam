@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://di1sjlclu26c6" path="res://scripts/tile_map_layer.gd" id="4_tabde"]
 [ext_resource type="PackedScene" uid="uid://yy0mrbgpo3i" path="res://scene/Player.tscn" id="5_mcofl"]
 [ext_resource type="PackedScene" uid="uid://3p1yaxk0vghq" path="res://scene/Enemy_Buff.tscn" id="6_6hbhf"]
+[ext_resource type="PackedScene" uid="uid://dbonbosagalbi" path="res://scene/door.tscn" id="7_od5a8"]
+[ext_resource type="PackedScene" uid="uid://bedvv4bhvaapi" path="res://scene/UI.tscn" id="8_tabde"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr22o"]
 texture = ExtResource("1_hhqfe")
@@ -60,3 +62,24 @@ script = ExtResource("4_tabde")
 position = Vector2(-152, 4)
 
 [node name="Nihceat" parent="." unique_id=581925165 instance=ExtResource("6_6hbhf")]
+
+[node name="Door" parent="." unique_id=1504637846 instance=ExtResource("7_od5a8")]
+position = Vector2(152, 9)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=449732635]
+z_index = -100
+offset_left = -390.0
+offset_top = -254.0
+offset_right = 387.0
+offset_bottom = 346.0
+color = Color(0.180135, 0.0695655, 0.198345, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1547927051]
+position = Vector2(-390, -254)
+color = Color(0.956721, 0.798827, 0.800145, 1)
+blend_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=217365217]
+zoom = Vector2(4, 4)
+
+[node name="Control" parent="." unique_id=608296916 instance=ExtResource("8_tabde")]

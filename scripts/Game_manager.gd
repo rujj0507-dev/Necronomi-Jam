@@ -16,6 +16,8 @@ var player_cooldown = 0.5
 var player_got_damagechance = false
 var player_got_randomspeed = false
 var cardpick = false
+var card_turn = 3
+var boss_room = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

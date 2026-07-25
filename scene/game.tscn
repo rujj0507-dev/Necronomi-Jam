@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwpf81jtjbbbp"]
 
-[ext_resource type="PackedScene" uid="uid://b8ywx2mgjhwhw" path="res://scene/Rooms/room_8.tscn" id="2_dbls1"]
+[ext_resource type="PackedScene" uid="uid://mbldos1g52br" path="res://scene/Rooms/room_start.tscn" id="2_dbls1"]
 [ext_resource type="PackedScene" uid="uid://bedvv4bhvaapi" path="res://scene/UI.tscn" id="3_33cqm"]
 
 [node name="Game" type="Node2D" unique_id=1467843556]
