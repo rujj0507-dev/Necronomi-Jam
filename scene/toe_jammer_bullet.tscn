@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://du0v5607wbsue"]
+
+[ext_resource type="Texture2D" uid="uid://bk50jucc1bwbx" path="res://sprite/enemy_bullet.png" id="1_avv83"]
+[ext_resource type="Script" uid="uid://bd57ihr6vwfj4" path="res://scripts/toe_jammer_bullet.gd" id="1_xmkso"]
+[ext_resource type="AudioStream" uid="uid://beuwkqo1r48sy" path="res://sound/hitmarker_2 (1).mp3" id="2_xmkso"]
+[ext_resource type="PackedScene" uid="uid://cg06ov0mli8u1" path="res://scene/damage_zone.tscn" id="4_mnthe"]
+
+[sub_resource type="Gradient" id="Gradient_mnthe"]
+offsets = PackedFloat32Array(0.18072289, 0.19277108)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1a3tp"]
+gradient = SubResource("Gradient_mnthe")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfe87"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1a3tp"]
+radius = 4.0
+
+[node name="ToeJammer_Bullet" type="Area2D" unique_id=1936926780]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_xmkso")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=564867968]
+texture = ExtResource("1_avv83")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1848511704]
+scale = Vector2(0.5498047, 0.5498047)
+color = Color(0.9999786, 0.1373812, 0.30514306, 1)
+texture = SubResource("GradientTexture2D_1a3tp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336188838]
+shape = SubResource("CircleShape2D_dfe87")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1049864783]
+stream = ExtResource("2_xmkso")
+
+[node name="DamageZone" parent="." unique_id=820437770 instance=ExtResource("4_mnthe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1666339454]
+shape = SubResource("CircleShape2D_1a3tp")
+debug_color = Color(0.9932981, 0, 0.24640796, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

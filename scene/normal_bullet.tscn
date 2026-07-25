@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d7mxdm56u1o1"]
+
+[ext_resource type="Texture2D" uid="uid://bk50jucc1bwbx" path="res://sprite/enemy_bullet.png" id="1_ie38x"]
+[ext_resource type="Script" uid="uid://cf6h26ic5vcsm" path="res://scripts/normal_bullet.gd" id="1_iqikf"]
+[ext_resource type="AudioStream" uid="uid://beuwkqo1r48sy" path="res://sound/hitmarker_2 (1).mp3" id="3_5s85b"]
+[ext_resource type="PackedScene" uid="uid://cg06ov0mli8u1" path="res://scene/damage_zone.tscn" id="3_8i3tq"]
+
+[sub_resource type="Gradient" id="Gradient_iqikf"]
+offsets = PackedFloat32Array(0.18072289, 0.19277108)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s7wsd"]
+gradient = SubResource("Gradient_iqikf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7wsd"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7rlf"]
+radius = 4.0
+
+[node name="Normal_bullet" type="Area2D" unique_id=164707000]
+scale = Vector2(0.75, 0.75)
+collision_layer = 16
+collision_mask = 11
+script = ExtResource("1_iqikf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=70200678]
+texture = ExtResource("1_ie38x")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1539887215]
+scale = Vector2(0.5498047, 0.5498047)
+color = Color(0.9999786, 0.1373812, 0.30514306, 1)
+texture = SubResource("GradientTexture2D_s7wsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1408697560]
+shape = SubResource("CircleShape2D_s7wsd")
+
+[node name="DamageZone" parent="." unique_id=820437770 instance=ExtResource("3_8i3tq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=201529386]
+shape = SubResource("CircleShape2D_s7rlf")
+debug_color = Color(0.9932981, 0, 0.24640796, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=821881934]
+stream = ExtResource("3_5s85b")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

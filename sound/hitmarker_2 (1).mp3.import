@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beuwkqo1r48sy"
+path="res://.godot/imported/hitmarker_2 (1).mp3-4ba622429a12e5bad71f53c7d0cd6549.mp3str"
+
+[deps]
+
+source_file="res://sound/hitmarker_2 (1).mp3"
+dest_files=["res://.godot/imported/hitmarker_2 (1).mp3-4ba622429a12e5bad71f53c7d0cd6549.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://8kwi0wv65i8j"]
+
+[ext_resource type="Script" uid="uid://bhj1juo08gj4n" path="res://buff_debyff.gd" id="1_038si"]
+[ext_resource type="Texture2D" uid="uid://dgii4616r2ii" path="res://sprite/buff-debuff_card_ss.png" id="2_xrgu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irop6"]
+atlas = ExtResource("2_xrgu4")
+region = Rect2(80, 0, 80, 112)
+
+[resource]
+script = ExtResource("1_038si")
+texture = SubResource("AtlasTexture_irop6")
+infor = "gun damage - 1"
+metadata/_custom_type_script = "uid://bhj1juo08gj4n"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://bffyjgfowsrso"]
+
+[ext_resource type="Script" uid="uid://bhj1juo08gj4n" path="res://buff_debyff.gd" id="1_ju18i"]
+[ext_resource type="Texture2D" uid="uid://dgii4616r2ii" path="res://sprite/buff-debuff_card_ss.png" id="2_26bjp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgsxe"]
+atlas = ExtResource("2_26bjp")
+region = Rect2(160, 0, 80, 112)
+
+[resource]
+script = ExtResource("1_ju18i")
+texture = SubResource("AtlasTexture_vgsxe")
+infor = "bullet speed - 50%"
+metadata/_custom_type_script = "uid://bhj1juo08gj4n"

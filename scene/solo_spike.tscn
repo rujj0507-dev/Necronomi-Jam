@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cn7ii8gtgwkl2"]
+
+[ext_resource type="Texture2D" uid="uid://bl6ffvfi0ssas" path="res://sprite/floor_spike.png" id="1_j6sll"]
+[ext_resource type="PackedScene" uid="uid://cg06ov0mli8u1" path="res://scene/damage_zone.tscn" id="2_iqnsf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
+size = Vector2(4, 12)
+
+[node name="SoloSpike" type="Sprite2D" unique_id=98108881]
+z_index = -1
+texture = ExtResource("1_j6sll")
+hframes = 2
+vframes = 2
+frame = 3
+
+[node name="DamageZone" parent="." unique_id=820437770 instance=ExtResource("2_iqnsf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1515566640]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_s7wsd")
