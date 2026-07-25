@@ -1,29 +1,29 @@
-[gd_scene format=3 uid="uid://bcflkomtohs82"]
+[gd_scene format=3 uid="uid://ccspkfse0tu4j"]
 
-[ext_resource type="Texture2D" uid="uid://cwlg2jxwhc2wf" path="res://sprite/tojamer_ss.png" id="1_s2fqe"]
-[ext_resource type="Script" uid="uid://3e385lgirytq" path="res://scripts/toe_jammer.gd" id="2_fhxlq"]
-[ext_resource type="Shader" uid="uid://cuc475hq3md44" path="res://Shader/hit_flash.tres" id="2_t6x2u"]
+[ext_resource type="Script" uid="uid://b8r8144vavwfv" path="res://scripts/toe_jammer_buff.gd" id="1_0it14"]
+[ext_resource type="Shader" uid="uid://cuc475hq3md44" path="res://Shader/hit_flash.tres" id="2_6uf02"]
+[ext_resource type="Texture2D" uid="uid://cwlg2jxwhc2wf" path="res://sprite/tojamer_ss.png" id="3_1isk5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u44f8"]
 resource_local_to_scene = true
-shader = ExtResource("2_t6x2u")
+shader = ExtResource("2_6uf02")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhxlq"]
-atlas = ExtResource("1_s2fqe")
+atlas = ExtResource("3_1isk5")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t6x2u"]
-atlas = ExtResource("1_s2fqe")
+atlas = ExtResource("3_1isk5")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u44f8"]
-atlas = ExtResource("1_s2fqe")
+atlas = ExtResource("3_1isk5")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we50b"]
-atlas = ExtResource("1_s2fqe")
+atlas = ExtResource("3_1isk5")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7rlf"]
@@ -118,7 +118,7 @@ _data = {
 [node name="ToeJammer" type="CharacterBody2D" unique_id=828947212]
 z_index = -1
 collision_layer = 0
-script = ExtResource("2_fhxlq")
+script = ExtResource("1_0it14")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1782811270]
 material = SubResource("ShaderMaterial_u44f8")
@@ -133,7 +133,7 @@ autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=606326788]
 z_index = -2
-color = Color(1, 0.13725491, 0.18039216, 1)
+color = Color(1, 1, 0.18039216, 1)
 texture = SubResource("GradientTexture2D_s7wsd")
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1187593554]

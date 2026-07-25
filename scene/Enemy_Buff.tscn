@@ -1,62 +1,62 @@
-[gd_scene format=3 uid="uid://yvi1e6bd3ych"]
+[gd_scene format=3 uid="uid://3p1yaxk0vghq"]
 
-[ext_resource type="Script" uid="uid://viwtn00jpvp6" path="res://scripts/enemy.gd" id="1_dregr"]
-[ext_resource type="Shader" uid="uid://cuc475hq3md44" path="res://Shader/hit_flash.tres" id="2_ta25w"]
-[ext_resource type="Texture2D" uid="uid://d3vnrk8qke2q8" path="res://sprite/enemy_ss.png" id="3_sja4v"]
-[ext_resource type="AudioStream" uid="uid://gnuqjh4uqu0y" path="res://sound/error_CDOxCYm.mp3" id="4_ta25w"]
+[ext_resource type="Script" uid="uid://bcop05oi528iv" path="res://scripts/enemy_buff.gd" id="1_tdvlv"]
+[ext_resource type="Shader" uid="uid://cuc475hq3md44" path="res://Shader/hit_flash.tres" id="2_ucqnk"]
+[ext_resource type="Texture2D" uid="uid://d3vnrk8qke2q8" path="res://sprite/enemy_ss.png" id="3_whhcy"]
+[ext_resource type="AudioStream" uid="uid://gnuqjh4uqu0y" path="res://sound/error_CDOxCYm.mp3" id="4_ngp53"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5hvf"]
 resource_local_to_scene = true
-shader = ExtResource("2_ta25w")
+shader = ExtResource("2_ucqnk")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta25w"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5hvf"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xtkpt"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1h8o2"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sja4v"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lf1m"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_coipo"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewjtf"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jolul"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_reuj6"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(128, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kvhj"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_easx2"]
-atlas = ExtResource("3_sja4v")
+atlas = ExtResource("3_whhcy")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
@@ -176,11 +176,11 @@ _data = {
 &"start": SubResource("Animation_8lf1m")
 }
 
-[node name="Nihceat" type="CharacterBody2D" unique_id=581925165]
+[node name="Nihceat_buff" type="CharacterBody2D" unique_id=581925165]
 z_index = -1
 collision_layer = 32
 collision_mask = 74
-script = ExtResource("1_dregr")
+script = ExtResource("1_tdvlv")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1435878264]
 material = SubResource("ShaderMaterial_m5hvf")
@@ -207,17 +207,17 @@ metadata/_edit_group_ = true
 [node name="Eye1" type="PointLight2D" parent="." unique_id=1427735343]
 position = Vector2(-0.5, -2)
 scale = Vector2(0.015625, 0.031249998)
-color = Color(0.96151346, 5.1162988e-05, 2.753079e-05, 1)
+color = Color(0.58020586, 0.00037118435, 0.6132222, 1)
 texture = SubResource("GradientTexture2D_51o8a")
 
 [node name="Eye2" type="PointLight2D" parent="." unique_id=169348353]
 position = Vector2(2.5, -2)
 scale = Vector2(0.015625, 0.031249998)
-color = Color(0.96151346, 5.1162988e-05, 2.753079e-05, 1)
+color = Color(0.5803922, 0, 0.6117647, 1)
 texture = SubResource("GradientTexture2D_51o8a")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1871124738]
-stream = ExtResource("4_ta25w")
+stream = ExtResource("4_ngp53")
 
 [node name="Timer" type="Timer" parent="." unique_id=610127780]
 one_shot = true

@@ -176,7 +176,7 @@ shader_parameter/tint = Color(1, 1, 1, 1)
 size = Vector2(8, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7rlf"]
-size = Vector2(16, 17)
+size = Vector2(15, 15)
 
 [sub_resource type="Animation" id="Animation_dc1pm"]
 length = 0.001
@@ -308,7 +308,7 @@ debug_color = Color(0.9898791, 0, 0.2907281, 0.41960785)
 metadata/_edit_group_ = true
 
 [node name="Player_hitbox" type="CollisionShape2D" parent="." unique_id=2131346120]
-position = Vector2(0, 4.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_s7rlf")
 metadata/_edit_group_ = true
 
