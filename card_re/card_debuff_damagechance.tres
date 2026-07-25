@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://daig0qiiclrye"]
+
+[ext_resource type="Script" uid="uid://bhj1juo08gj4n" path="res://buff_debyff.gd" id="1_ta7xs"]
+[ext_resource type="Texture2D" uid="uid://dgii4616r2ii" path="res://sprite/buff-debuff_card_ss.png" id="2_lvp4c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn0yb"]
+atlas = ExtResource("2_lvp4c")
+region = Rect2(80, 112, 80, 112)
+
+[resource]
+script = ExtResource("1_ta7xs")
+texture = SubResource("AtlasTexture_fn0yb")
+infor = "70% damage - 2 30% damage + 2"
+metadata/_custom_type_script = "uid://bhj1juo08gj4n"

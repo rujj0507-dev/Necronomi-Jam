@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://gljj6nnsn5km"]
+
+[ext_resource type="Script" uid="uid://dsxa7aemhn4gp" path="res://scripts/pick_card.gd" id="1_gm0y0"]
+[ext_resource type="PackedScene" uid="uid://cuysu28pjyc4i" path="res://scene/card.tscn" id="2_jlmbu"]
+
+[node name="pick_card" type="Control" unique_id=1219839589]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gm0y0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=238957669]
+
+[node name="card" parent="CanvasLayer" unique_id=226691269 instance=ExtResource("2_jlmbu")]
+position = Vector2(382, 523)
+scale = Vector2(5, 5)
+
+[node name="card2" parent="CanvasLayer" unique_id=1291598094 instance=ExtResource("2_jlmbu")]
+position = Vector2(989.99994, 523)
+scale = Vector2(5, 5)
+
+[node name="card3" parent="CanvasLayer" unique_id=1152017565 instance=ExtResource("2_jlmbu")]
+position = Vector2(1572, 523)
+scale = Vector2(5, 5)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=12868773]
+layout_mode = 0
+offset_right = 2325.0
+offset_bottom = 1571.0
+color = Color(0.09803922, 0.1254902, 0.19607843, 1)

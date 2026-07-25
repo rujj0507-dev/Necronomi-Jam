@@ -68,7 +68,7 @@ func hit():
 func player_shoot():
 	if !cooldownu:
 		cooldownu = true
-		$cooldown.start()
+		$cooldown.start(GameManager.player_cooldown)
 		var bullet = bullet_scene.instantiate()
 		bullet.speed = GameManager.player_bullet_speed
 		get_tree().current_scene.add_child(bullet)
