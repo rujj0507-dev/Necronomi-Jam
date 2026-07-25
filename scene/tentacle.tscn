@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ca4dbwnykqr2h"]
+
+[ext_resource type="Script" uid="uid://cgphtgfnmutj3" path="res://scripts/tentacle.gd" id="1_vxsk5"]
+[ext_resource type="Texture2D" uid="uid://dohd0nker6p2d" path="res://sprite/tenta_ss.png" id="2_vxsk5"]
+[ext_resource type="PackedScene" uid="uid://cg06ov0mli8u1" path="res://scene/damage_zone.tscn" id="3_7ldjy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
+size = Vector2(21.851067, 12.081522)
+
+[node name="tentacle" type="Node2D" unique_id=151401124]
+position = Vector2(-2, 1.0000038)
+script = ExtResource("1_vxsk5")
+
+[node name="Timer" type="Timer" parent="." unique_id=1882606560]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=1794229584]
+wait_time = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=897088474]
+texture = ExtResource("2_vxsk5")
+
+[node name="DamageZone" parent="." unique_id=820437770 instance=ExtResource("3_7ldjy")]
+scale = Vector2(1.1898733, 9.435897)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1836328202]
+position = Vector2(0, -0.5298917)
+shape = SubResource("RectangleShape2D_s7wsd")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

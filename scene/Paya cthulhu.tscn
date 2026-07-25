@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://xhmanmmtmilc"]
+
+[ext_resource type="Script" uid="uid://yqfj5q2nkvig" path="res://scripts/Payatulu_movement.gd" id="1_s7dh4"]
+[ext_resource type="PackedScene" uid="uid://d7mxdm56u1o1" path="res://scene/normal_bullet.tscn" id="2_50w2e"]
+[ext_resource type="PackedScene" uid="uid://yvi1e6bd3ych" path="res://scene/Enemy.tscn" id="3_pkq80"]
+[ext_resource type="Texture2D" uid="uid://d1gbgcq3der5a" path="res://sprite/payatulu_ss2.png" id="3_s7dh4"]
+[ext_resource type="PackedScene" uid="uid://ca4dbwnykqr2h" path="res://scene/tentacle.tscn" id="4_4fjpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkq80"]
+atlas = ExtResource("3_s7dh4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fjpm"]
+atlas = ExtResource("3_s7dh4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyajr"]
+atlas = ExtResource("3_s7dh4")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1jrs"]
+atlas = ExtResource("3_s7dh4")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkq80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fjpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyajr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1jrs")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
+size = Vector2(37, 70)
+
+[sub_resource type="Gradient" id="Gradient_dregr"]
+offsets = PackedFloat32Array(0.93373495, 0.9879518)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_51o8a"]
+gradient = SubResource("Gradient_dregr")
+fill = 2
+fill_from = Vector2(0.5043478, 0.5173913)
+
+[node name="Payatulu" type="CharacterBody2D" unique_id=581925165]
+z_index = -5
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_s7dh4")
+bullet_scene = ExtResource("2_50w2e")
+enemy_scene = ExtResource("3_pkq80")
+tenten_scene = ExtResource("4_4fjpm")
+fire_rate = 0.5
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1435878264]
+sprite_frames = SubResource("SpriteFrames_s7wsd")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.7836082
+
+[node name="Enemy_Hitbox" type="CollisionShape2D" parent="." unique_id=1348027552]
+position = Vector2(-0.5, -27)
+shape = SubResource("RectangleShape2D_s7wsd")
+
+[node name="Eye1" type="PointLight2D" parent="." unique_id=1427735343]
+position = Vector2(8, -16.5)
+scale = Vector2(0.031249993, 0.015624993)
+color = Color(0.96151346, 5.1162988e-05, 2.753079e-05, 1)
+texture = SubResource("GradientTexture2D_51o8a")
+
+[node name="Eye2" type="PointLight2D" parent="." unique_id=169348353]
+position = Vector2(-8, -16.5)
+scale = Vector2(0.031249993, 0.015624993)
+color = Color(0.96151346, 5.1162988e-05, 2.753079e-05, 1)
+texture = SubResource("GradientTexture2D_51o8a")
+
+[node name="att_timer" type="Timer" parent="." unique_id=466803246]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="att_timer" to="." method="_on_att_timer_timeout"]

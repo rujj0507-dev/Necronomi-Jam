@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bedvv4bhvaapi"]
+
+[ext_resource type="Script" uid="uid://b6hxmfou8shnx" path="res://scripts/HealthIndicator v1.2.gd" id="1_g6l6n"]
+[ext_resource type="Texture2D" uid="uid://df50minbqynhk" path="res://sprite/health_ss.png" id="2_g6l6n"]
+[ext_resource type="Script" uid="uid://da4oxac0i65d8" path="res://scripts/SanityOverlay.gd" id="3_qui0h"]
+[ext_resource type="Texture2D" uid="uid://bnkck8e4fj6py" path="res://sprite/health_corrupt_ss.png" id="4_0mc3e"]
+[ext_resource type="Script" uid="uid://40438dqrsme0" path="res://scripts/TestVitals.gd" id="4_vrfts"]
+
+[node name="Control" type="Control" unique_id=608296916]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1596887757]
+
+[node name="Health" type="Node" parent="CanvasLayer" unique_id=1510681066]
+
+[node name="HealthIndicator" type="Control" parent="CanvasLayer/Health" unique_id=484840989]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(80, 60)
+offset_transform_scale = Vector2(2.5, 2.5)
+script = ExtResource("1_g6l6n")
+sprite_sheet = ExtResource("2_g6l6n")
+metadata/_edit_use_anchors_ = true
+
+[node name="SanityOverlay" type="Control" parent="CanvasLayer/Health" unique_id=1585058840]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(80, 60)
+offset_transform_scale = Vector2(2.7, 2.7)
+script = ExtResource("3_qui0h")
+sprite_sheet = ExtResource("4_0mc3e")
+metadata/_edit_use_anchors_ = true
+
+[node name="Node" type="Node" parent="CanvasLayer" unique_id=628964067 node_paths=PackedStringArray("health_bar", "sanity_overlay")]
+script = ExtResource("4_vrfts")
+health_bar = NodePath("../Health/HealthIndicator")
+sanity_overlay = NodePath("../Health/SanityOverlay")

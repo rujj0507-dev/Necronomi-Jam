@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://cc5xpqotbak57"]
+
+[ext_resource type="Texture2D" uid="uid://bmr5yvcajo7q7" path="res://sprite/Gooner_monster.png" id="1_gtluo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh1qs"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2d7y"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aswtd"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asfgr"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwjni"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj8b6"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb5ii"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcbg1"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gfh5"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ikui"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n03s1"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2otsk"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij8io"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpey3"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1b06"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vw3p"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1bqt"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlb7u"]
+atlas = ExtResource("1_gtluo")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh1qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2d7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aswtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asfgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwjni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj8b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb5ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcbg1")
+}],
+"loop": 1,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gfh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ikui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n03s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2otsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij8io")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpey3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1b06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vw3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1bqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlb7u")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1339034892]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=503527987]
+sprite_frames = SubResource("SpriteFrames_s7wsd")
+animation = &"Idle"
+autoplay = "Idle"
