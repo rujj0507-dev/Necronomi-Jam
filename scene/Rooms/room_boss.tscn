@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://di1sjlclu26c6" path="res://scripts/tile_map_layer.gd" id="3_b6pms"]
 [ext_resource type="PackedScene" uid="uid://xhmanmmtmilc" path="res://scene/Paya cthulhu.tscn" id="4_t5cus"]
 [ext_resource type="PackedScene" uid="uid://cn7ii8gtgwkl2" path="res://scene/solo_spike.tscn" id="5_b6pms"]
+[ext_resource type="PackedScene" uid="uid://bcflkomtohs82" path="res://scene/toe_jammer.tscn" id="7_ehalw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr22o"]
 texture = ExtResource("1_t5cus")
@@ -61,3 +62,6 @@ position = Vector2(32, 24)
 
 [node name="Payatulu" parent="." unique_id=581925165 instance=ExtResource("4_t5cus")]
 position = Vector2(-1, -52)
+
+[node name="ToeJammer" parent="." unique_id=560281415 instance=ExtResource("7_ehalw")]
+position = Vector2(-80, 12)

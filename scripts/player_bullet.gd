@@ -17,12 +17,15 @@ func set_direction(dir: Vector2) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("walls"):
 		queue_free()
-	if body.has_method("hit"):
-			body.hit()
-			queue_free()
-		
+	#if body.has_method("hit"):
+			#body.hit()
+			#queue_free()
+	await get_tree().create_timer(0.1).timeout
+	queue_free()
+
 func _on_area_entered(area: Area2D) -> void:
-			audio_stream_player_2d.play()
-			visible = false
-			await audio_stream_player_2d.finished
-			queue_free()
+	audio_stream_player_2d.play()
+	visible = false
+	await audio_stream_player_2d.finished
+	await get_tree().create_timer(0.5).timeout
+	queue_free()

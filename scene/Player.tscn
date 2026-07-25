@@ -18,7 +18,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.12608695, 0.104347825)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_82gks"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dc1pm"]
 shader = ExtResource("2_waelg")
 shader_parameter/enabled = true
 shader_parameter/tint = Color(1, 1, 1, 1)
@@ -167,6 +167,11 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_82gks"]
+shader = ExtResource("2_waelg")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
 size = Vector2(8, 13)
 
@@ -226,6 +231,43 @@ _data = {
 &"start": SubResource("Animation_waelg")
 }
 
+[sub_resource type="Animation" id="Animation_kqvfm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_63jwq"]
+resource_name = "i"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.49019608), Color(1, 1, 1, 1), Color(1, 1, 1, 0.60784316), Color(1, 1, 1, 1), Color(1, 1, 1, 0.85882354), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6ll3"]
+_data = {
+&"RESET": SubResource("Animation_kqvfm"),
+&"i": SubResource("Animation_63jwq")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=2093416601]
 collision_mask = 67
 script = ExtResource("1_62i1b")
@@ -238,14 +280,14 @@ texture = SubResource("GradientTexture2D_s7wsd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1518290473]
-material = SubResource("ShaderMaterial_82gks")
+material = SubResource("ShaderMaterial_dc1pm")
 sprite_frames = SubResource("SpriteFrames_s7wsd")
-animation = &"Die"
-frame = 5
-frame_progress = 1.0
+animation = &"Idle"
+frame_progress = 0.45673913
 metadata/_edit_group_ = true
 
 [node name="die" type="AnimatedSprite2D" parent="." unique_id=227892375]
+visible = false
 material = SubResource("ShaderMaterial_82gks")
 sprite_frames = SubResource("SpriteFrames_s7wsd")
 animation = &"Die"
@@ -274,8 +316,13 @@ metadata/_edit_group_ = true
 libraries/ = SubResource("AnimationLibrary_kqvfm")
 autoplay = &"start"
 
+[node name="Iframe" type="AnimationPlayer" parent="." unique_id=855121966]
+root_node = NodePath("../AnimationPlayer")
+libraries/ = SubResource("AnimationLibrary_r6ll3")
+
 [node name="cooldown" type="Timer" parent="." unique_id=1206786178]
 wait_time = 0.5
 one_shot = true
 
+[connection signal="animation_finished" from="Iframe" to="." method="_on_iframe_animation_finished"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

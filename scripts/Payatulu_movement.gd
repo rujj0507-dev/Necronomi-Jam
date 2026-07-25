@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var fire_rate: float = 2.0
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+var hp = 2000
 var player: Node2D = null
 enum state {bullet,spawn }
 
@@ -73,3 +74,16 @@ func _on_att_timer_timeout() -> void:
 		spawn_enemy()
 	else:
 		shoot()
+
+	
+func hit():
+	$AnimationPlayer.play("hitflash")
+	hp -= GameManager.player_attack_damage
+	$CanvasLayer/TextureRect/TextureRect2/ProgressBar.value = hp
+	if hp <= 0:
+		queue_free()
+	
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	hit()

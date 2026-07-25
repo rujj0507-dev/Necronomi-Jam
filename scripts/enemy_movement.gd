@@ -75,3 +75,7 @@ func hit():
 	if hp <= 0:
 		queue_free()
 	
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	hit()

@@ -1,5 +1,6 @@
-extends AnimatedSprite2D
+extends CharacterBody2D
 var balls_num = 10
+var hp = 40
 var balls_path = preload("res://scene/toe_jammer_bullet.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,3 +27,15 @@ func vongmagic_logic():
 
 func _on_timer_timeout() -> void:
 	vongmagic_logic()
+	
+	
+func hit():
+	print("67")
+	$AnimationPlayer.play("flash")
+	hp -= GameManager.player_attack_damage
+	if hp <= 0:
+		queue_free()
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	hit()

@@ -20,7 +20,7 @@ color = Color(0.95672137, 0.7988267, 0.8001451, 1)
 blend_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1718010567]
-zoom = Vector2(6, 6)
+zoom = Vector2(4, 4)
 
 [node name="Player" parent="." unique_id=2093416601 instance=ExtResource("2_33cqm")]
 

@@ -1,10 +1,12 @@
 extends CharacterBody2D
-var deadyung = false
-@export var bullet_scene: PackedScene
 
-var cooldownu = false
-const SPEED = 100.0
+@export var bullet_scene: PackedScene
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var cooldownu = false
+var deadyung = false
+const SPEED = 100.0
+var iframe = false
+
 func _ready() -> void:
 	add_to_group("player")
 
@@ -14,7 +16,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if velocity.x > 1 or velocity.x < -1 and !deadyung:
+	if velocity.x > 1 or velocity.x < -1:
 		animated_sprite_2d.animation = "Walk"
 	else:
 		animated_sprite_2d.animation = "Idle"
@@ -29,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = direction_y * GameManager.player_speed
 	else:
 		velocity.y = move_toward(velocity.y, 0, GameManager.player_speed)
-	if GameManager.player_health <= 0 and !deadyung:
+	if GameManager.player_health <= 0:
 		print("Die")
 		animated_sprite_2d.visible = false
 		$die.play("Die")
@@ -50,9 +52,18 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = true  # Face left while moving left
 		
 func hit():
-	$AnimationPlayer.play("damaged")
-	GameManager.player_health -= 10
-	print("off")
+	#$AnimationPlayer.play("damaged")
+	#$Iframe.play("i")
+	#GameManager.player_health -= 10
+	#print("off")
+	
+	## มี iframe
+	if !iframe:
+		iframe = true
+		$AnimationPlayer.play("damaged")
+		$Iframe.play("i")
+		GameManager.player_health -= 10
+		print("off")
 
 func player_shoot():
 	if !cooldownu:
@@ -69,3 +80,8 @@ func player_shoot():
 
 func _on_cooldown_timeout() -> void:
 	cooldownu = false
+
+
+func _on_iframe_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "i":
+		iframe = false
