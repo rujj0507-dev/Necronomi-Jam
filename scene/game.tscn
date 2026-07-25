@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwpf81jtjbbbp"]
+[gd_scene format=3 uid="uid://bwpf81jtjbbbp"]
 
-[ext_resource type="PackedScene" uid="uid://dmlcurbhwo3ng" path="res://scene/Rooms/room_7.tscn" id="2_dbls1"]
+[ext_resource type="PackedScene" uid="uid://b8ywx2mgjhwhw" path="res://scene/Rooms/room_8.tscn" id="2_dbls1"]
 [ext_resource type="PackedScene" uid="uid://bedvv4bhvaapi" path="res://scene/UI.tscn" id="3_33cqm"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=1467843556]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1727663215]
 z_index = -100
 offset_left = -390.0
 offset_top = -254.0
@@ -13,16 +13,14 @@ offset_right = 387.0
 offset_bottom = 346.0
 color = Color(0.180135, 0.0695655, 0.198345, 1)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1342881620]
 position = Vector2(-390, -254)
 color = Color(0.956721, 0.798827, 0.800145, 1)
 blend_mode = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1064547628]
 zoom = Vector2(4, 4)
-
 
 [node name="Control" parent="." unique_id=608296916 instance=ExtResource("3_33cqm")]
 
 [node name="Node2D" parent="." unique_id=1697990087 instance=ExtResource("2_dbls1")]
-

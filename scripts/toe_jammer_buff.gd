@@ -1,7 +1,7 @@
 extends CharacterBody2D
-var balls_num = 20
+var balls_num = 30
 var hp = 80
-var balls_path = preload("res://scene/toe_jammer_bullet.tscn")
+var balls_path = preload("res://scene/toe_jammer_bullet_buff.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
