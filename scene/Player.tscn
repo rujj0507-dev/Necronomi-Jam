@@ -283,11 +283,10 @@ metadata/_edit_group_ = true
 material = SubResource("ShaderMaterial_dc1pm")
 sprite_frames = SubResource("SpriteFrames_s7wsd")
 animation = &"Idle"
-frame_progress = 0.45673913
+frame_progress = 0.71590865
 metadata/_edit_group_ = true
 
 [node name="die" type="AnimatedSprite2D" parent="." unique_id=227892375]
-visible = false
 material = SubResource("ShaderMaterial_82gks")
 sprite_frames = SubResource("SpriteFrames_s7wsd")
 animation = &"Die"
@@ -324,5 +323,9 @@ libraries/ = SubResource("AnimationLibrary_r6ll3")
 wait_time = 0.5
 one_shot = true
 
+[node name="randomspeed" type="Timer" parent="." unique_id=1933693995]
+autostart = true
+
 [connection signal="animation_finished" from="Iframe" to="." method="_on_iframe_animation_finished"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="randomspeed" to="." method="_on_randomspeed_timeout"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" format=3 uid="uid://bsa64eqt24lgx"]
 
-[ext_resource type="Script" uid="uid://bhj1juo08gj4n" path="res://buff_debyff.gd" id="1_hriyj"]
+[ext_resource type="Script" uid="uid://bhj1juo08gj4n" path="res://scripts/buff_debyff.gd" id="1_hriyj"]
 [ext_resource type="Texture2D" uid="uid://dgii4616r2ii" path="res://sprite/buff-debuff_card_ss.png" id="2_uywi3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md2gi"]
