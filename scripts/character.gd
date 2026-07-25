@@ -16,11 +16,14 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if velocity.x > 1 or velocity.x < -1:
+	if velocity.x > 1 or velocity.x < -1 or velocity.y > 1 or velocity.y < -1 :
 		animated_sprite_2d.animation = "Walk"
 	else:
 		animated_sprite_2d.animation = "Idle"
-
+	
+	if not animated_sprite_2d.is_playing():
+		animated_sprite_2d.play()
+	
 	var direction_x := Input.get_axis("left", "right")
 	if direction_x:
 		velocity.x = direction_x * GameManager.player_speed
@@ -85,3 +88,9 @@ func _on_cooldown_timeout() -> void:
 func _on_iframe_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "i":
 		iframe = false
+
+
+func _on_randomspeed_timeout() -> void:
+	if GameManager.player_got_randomspeed:
+		var speed_limit = GameManager.player_speed
+		GameManager.player_speed = randi_range(40, 130)

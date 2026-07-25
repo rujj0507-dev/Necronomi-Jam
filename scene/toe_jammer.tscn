@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bcflkomtohs82"]
 
 [ext_resource type="Texture2D" uid="uid://cwlg2jxwhc2wf" path="res://sprite/tojamer_ss.png" id="1_s2fqe"]
-[ext_resource type="Script" uid="uid://3e385lgirytq" path="res://scene/toe_jammer.gd" id="2_fhxlq"]
+[ext_resource type="Script" uid="uid://3e385lgirytq" path="res://scripts/toe_jammer.gd" id="2_fhxlq"]
 [ext_resource type="Shader" uid="uid://cuc475hq3md44" path="res://Shader/hit_flash.tres" id="2_t6x2u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u44f8"]

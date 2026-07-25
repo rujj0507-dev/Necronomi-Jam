@@ -24,22 +24,22 @@ func _on_body_entered(body: Node) -> void:
 	queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
-	var rng
-	if GameManager.player_got_damagechance:
-		rng = randi_range(1,10)
-		if rng <= 7:
-			GameManager.player_attack_damage -= 2
-			rng = 1
-		else:
-			GameManager.player_attack_damage += 2
-			rng = 2
+	#var rng
+	#if GameManager.player_got_damagechance:
+		#rng = randi_range(1,10)
+		#if rng <= 7:
+			#GameManager.player_attack_damage -= 2
+			#rng = 1
+		#else:
+			#GameManager.player_attack_damage += 2
+			#rng = 2
 	audio_stream_player_2d.play()
 	visible = false
 	await audio_stream_player_2d.finished
-	await get_tree().create_timer(0.5).timeout
-	if rng == 1:
-		GameManager.player_attack_damage += 2
-	else:
-		GameManager.player_attack_damage -= 2
-	print(GameManager.player_attack_damage)
+	#await get_tree().create_timer(0.5).timeout
+	#if rng == 1:
+		#GameManager.player_attack_damage += 2
+	#else:
+		#GameManager.player_attack_damage -= 2
+	#print(GameManager.player_attack_damage)
 	queue_free()
