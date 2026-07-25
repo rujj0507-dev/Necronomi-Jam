@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://dt1gdwbpo7as7"]
+
+[ext_resource type="Script" uid="uid://bhj1juo08gj4n" path="res://scripts/buff_debyff.gd" id="1_wfyho"]
+[ext_resource type="Texture2D" uid="uid://dgii4616r2ii" path="res://sprite/buff-debuff_card_ss.png" id="2_ringn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc1pm"]
+atlas = ExtResource("2_ringn")
+region = Rect2(160, 112, 80, 112)
+
+[resource]
+script = ExtResource("1_wfyho")
+texture = SubResource("AtlasTexture_dc1pm")
+infor = "movement speed random"
+metadata/_custom_type_script = "uid://bhj1juo08gj4n"

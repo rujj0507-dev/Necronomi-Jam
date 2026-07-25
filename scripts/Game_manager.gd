@@ -14,6 +14,9 @@ var player_attack_damage = 5
 var player_bullet_speed = 250
 var player_cooldown = 0.5
 var player_got_damagechance = false
+var player_got_randomspeed = false
+var cardpick = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Goon")

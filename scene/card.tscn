@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuysu28pjyc4i"]
 
 [ext_resource type="Script" uid="uid://d0rjxby6tlryc" path="res://scripts/card.gd" id="1_7p64d"]
+[ext_resource type="Script" uid="uid://bhj1juo08gj4n" path="res://scripts/buff_debyff.gd" id="2_2amvn"]
 [ext_resource type="Resource" uid="uid://bsa64eqt24lgx" path="res://card_re/card_debuff_speed.tres" id="2_gw1lc"]
 [ext_resource type="Resource" uid="uid://8kwi0wv65i8j" path="res://card_re/card_debuff_damage.tres" id="3_jdt11"]
 [ext_resource type="Texture2D" uid="uid://dgii4616r2ii" path="res://sprite/buff-debuff_card_ss.png" id="3_md2gi"]
@@ -9,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cgu3q4pr86mvj" path="res://card_re/card_debuff_cooldown.tres" id="5_tom6i"]
 [ext_resource type="Resource" uid="uid://cneuarebqe1dx" path="res://card_re/card_debuff_health.tres" id="6_y87ln"]
 [ext_resource type="Resource" uid="uid://daig0qiiclrye" path="res://card_re/card_debuff_damagechance.tres" id="7_tom6i"]
+[ext_resource type="Resource" uid="uid://dt1gdwbpo7as7" path="res://card_re/card_debuff_randomspeed.tres" id="9_1s5ce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlmbu"]
 atlas = ExtResource("3_md2gi")
@@ -16,26 +18,28 @@ region = Rect2(0, 0, 80, 112)
 
 [node name="card" type="Node2D" unique_id=226691269]
 script = ExtResource("1_7p64d")
-resource_list = Array[Resource]([ExtResource("2_gw1lc"), ExtResource("3_jdt11"), ExtResource("4_y87ln"), ExtResource("5_tom6i"), ExtResource("6_y87ln"), ExtResource("7_tom6i")])
+resource_list = Array[ExtResource("2_2amvn")]([ExtResource("2_gw1lc"), ExtResource("3_jdt11"), ExtResource("4_y87ln"), ExtResource("5_tom6i"), ExtResource("6_y87ln"), ExtResource("7_tom6i"), ExtResource("9_1s5ce")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1566527726]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_jlmbu")
 
 [node name="Label" type="Label" parent="." unique_id=1499456790]
-offset_left = -41.0
-offset_top = 21.0
-offset_right = 41.0
-offset_bottom = 44.0
+offset_left = -57.0
+offset_top = 33.0
+offset_right = 58.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("4_md2gi")
 text = "speed - 50%"
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=161350925]
-offset_left = -45.0
-offset_top = -79.0
-offset_right = 46.0
-offset_bottom = 77.0
+self_modulate = Color(1, 1, 1, 0.3647059)
+offset_left = -67.0
+offset_top = -113.0
+offset_right = 66.0
+offset_bottom = 115.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
