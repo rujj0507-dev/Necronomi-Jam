@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dbonbosagalbi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
+size = Vector2(16, 32)
+
+[sub_resource type="Gradient" id="Gradient_5623o"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s7rlf"]
+gradient = SubResource("Gradient_5623o")
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(0.5, 0.5)
+
+[node name="Door" type="Area2D" unique_id=1504637846]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073213095]
+shape = SubResource("RectangleShape2D_s7wsd")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=306003619]
+position = Vector2(-24, 0)
+scale = Vector2(1, 0.5)
+color = Color(1, 1, 0, 1)
+texture = SubResource("GradientTexture2D_s7rlf")
